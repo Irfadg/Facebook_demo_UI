@@ -40,7 +40,7 @@ class Loginpage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    IconButton(onPressed: () {}, icon: Icon(Icons.mic)),
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.ac_unit)),
                     const Text(
                       "LOGIN",
                       style: TextStyle(
@@ -59,11 +59,11 @@ class Loginpage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: const [
                     Text(
-                      "LOGIN",
+                      "Sign-up",
                       style: TextStyle(fontSize: 30, color: Colors.white),
                     ),
                     Text(
-                      "sign-up",
+                      "@facebook",
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
