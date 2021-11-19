@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -25,57 +27,48 @@ class Loginpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.blue[100],
       body: SafeArea(
-          child: Center(
+        child: Center(
+          child: Container(
             child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-            Expanded(
-              flex: 3,
-              child: Container(
-                
-                // decoration: BoxDecoration(
-                //borderRadius: BorderRadius.circular(20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.ac_unit)),
-                    const Text(
-                      "LOGIN",
-                      style: TextStyle(
-                        fontSize: 40,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
+              children:  [
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Enter Your Email',
+                  ),
+                  ),
                 ),
-              ),
-            ),
-            Expanded(
-              child: Container(
-                child: Column(
-                  
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const [
-                    Text(
-                      "Sign-up",
-                      style: TextStyle(fontSize: 30, color: Colors.white),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                        hintText: 'Enter your Password',
+                      
                     ),
-                    Text(
-                      "@facebook",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Text("Click ME"),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Text("Show the Data Here!!"),
+                )
+              ],
             ),
-        ],
+          ),
+        ),
       ),
-          )),
     );
   }
 }
