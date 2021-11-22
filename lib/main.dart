@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,14 +14,15 @@ class Myapp extends StatelessWidget {
       theme: ThemeData(
         backgroundColor: Colors.indigo,
       ),
-      home: const Loginpage(),
+      home: Loginpage(),
     );
   }
 }
 
 class Loginpage extends StatelessWidget {
-  const Loginpage({Key? key}) : super(key: key);
-
+  Loginpage({Key? key}) : super(key: key);
+  final _textcontroller = TextEditingController();
+  final _textcontrollerforpassword = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,37 +31,42 @@ class Loginpage extends StatelessWidget {
         child: Center(
           child: Container(
             child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-              children:  [
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: TextField(
+                    controller: _textcontroller,
                     decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: 'Enter Your Email',
-                  ),
+                      border: OutlineInputBorder(),
+                      hintText: 'Enter Your Email',
+                    ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: TextField(
+                    controller: _textcontrollerforpassword,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                        hintText: 'Enter your Password',
-                      
+                      hintText: 'Enter your Password',
                     ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(30),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      //Get value
+                      print(_textcontroller.text);
+                      print(_textcontrollerforpassword.text);
+                    },
                     child: Text("Click ME"),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(20),
-                  child: Text("Show the Data Here!!"),
+                  child: Text("here is"),
                 )
               ],
             ),
@@ -72,3 +76,8 @@ class Loginpage extends StatelessWidget {
     );
   }
 }
+
+//access the input values from textbox
+//textcontroller
+//controller
+//texteditingcontroller
