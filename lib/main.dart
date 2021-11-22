@@ -19,10 +19,18 @@ class Myapp extends StatelessWidget {
   }
 }
 
-class Loginpage extends StatelessWidget {
+class Loginpage extends StatefulWidget {
   Loginpage({Key? key}) : super(key: key);
+
+  @override
+  State<Loginpage> createState() => _LoginpageState();
+}
+
+class _LoginpageState extends State<Loginpage> {
   final _textcontroller = TextEditingController();
-  final _textcontrollerforpassword = TextEditingController();
+
+  String _displayString = "String display Here";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +54,6 @@ class Loginpage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(20),
                   child: TextField(
-                    controller: _textcontrollerforpassword,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Enter your Password',
@@ -59,14 +66,17 @@ class Loginpage extends StatelessWidget {
                     onPressed: () {
                       //Get value
                       print(_textcontroller.text);
-                      print(_textcontrollerforpassword.text);
+                      setState(() {
+                         _displayString = _textcontroller.text;
+                      });
+                     
                     },
                     child: Text("Click ME"),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(20),
-                  child: Text("here is"),
+                  child: Text("Welcom $_displayString"),
                 )
               ],
             ),
@@ -80,4 +90,4 @@ class Loginpage extends StatelessWidget {
 //access the input values from textbox
 //textcontroller
 //controller
-//texteditingcontroller
+//
